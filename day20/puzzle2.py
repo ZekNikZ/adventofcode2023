@@ -13,7 +13,6 @@ NORMAL = 0
 FLIP_FLOP = 1
 CONJUNCTION = 2
 OUTPUT = 3
-TRACKED_NODES = ['mp', 'qt', 'qb', 'ng']
 
 graph = defaultdict(list)
 reverse_graph = defaultdict(list)
@@ -41,6 +40,7 @@ for key, val in initial_state.items():
 if 'rx' in graph:
     initial_state['rx'] = (OUTPUT, None)
 
+TRACKED_NODES = reverse_graph[reverse_graph['rx'][0]]
 
 # print(graph)
 # print(reverse_graph)
